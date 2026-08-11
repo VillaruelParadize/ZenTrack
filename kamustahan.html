@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZenTrack - Kamustahan</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+    <!-- Main Container -->
+    <div class="container-fluid p-0">
+        <div class="row g-0">
+            
+            <!-- Sidebar -->
+            <nav class="col-lg-2 col-md-3 sidebar" id="sidebar">
+                <div class="sidebar-header">
+                    <h3 class="logo-text"><i class="fas fa-leaf me-2"></i>ZenTrack</h3>
+                    <button class="sidebar-toggle d-md-none" onclick="toggleSidebar()">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <div class="sidebar-menu">
+                    <div class="menu-section">Main</div>
+                    <a href="index.html" class="menu-item" data-page="dashboard">
+                        <i class="fas fa-home"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="mood-tracker.html" class="menu-item" data-page="mood-tracker">
+                        <i class="fas fa-smile"></i>
+                        <span>Mood Tracker</span>
+                    </a>
+                    <a href="stress-tracker.html" class="menu-item" data-page="stress-tracker">
+                        <i class="fas fa-heartbeat"></i>
+                        <span>Stress Tracker</span>
+                    </a>
+                    <a href="journal.html" class="menu-item" data-page="journal">
+                        <i class="fas fa-book"></i>
+                        <span>Journal</span>
+                    </a>
+                    
+                    <div class="menu-section">Wellness</div>
+                    <a href="pomodoro.html" class="menu-item" data-page="pomodoro">
+                        <i class="fas fa-clock"></i>
+                        <span>Pomodoro</span>
+                    </a>
+                    <a href="breathing.html" class="menu-item" data-page="breathing">
+                        <i class="fas fa-wind"></i>
+                        <span>Breathing Exercise</span>
+                    </a>
+                    <a href="kamustahan.html" class="menu-item active" data-page="kamustahan">
+                        <i class="fas fa-comments"></i>
+                        <span>Kamustahan</span>
+                    </a>
+                    
+                    <div class="menu-section">Appointments</div>
+                    <a href="appointments.html" class="menu-item" data-page="appointments">
+                        <i class="fas fa-calendar-check"></i>
+                        <span>Appointments</span>
+                    </a>
+                    
+                    <div class="menu-section">Personal</div>
+                    <a href="notifications.html" class="menu-item" data-page="notifications">
+                        <i class="fas fa-bell"></i>
+                        <span>Notifications</span>
+                        <span class="badge bg-danger rounded-pill">3</span>
+                    </a>
+                    <a href="achievements.html" class="menu-item" data-page="achievements">
+                        <i class="fas fa-trophy"></i>
+                        <span>Achievements</span>
+                    </a>
+                    <a href="profile.html" class="menu-item" data-page="profile">
+                        <i class="fas fa-user"></i>
+                        <span>Profile</span>
+                    </a>
+                    <a href="settings.html" class="menu-item" data-page="settings">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                    </a>
+                    
+                    <div class="menu-section">Account</div>
+                    <a href="logout.html" class="menu-item" data-page="logout">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Logout</span>
+                    </a>
+                </div>
+                
+                <div class="sidebar-footer">
+                    <div class="streak-badge">
+                        <i class="fas fa-fire text-warning"></i>
+                        <span>7 Day Streak</span>
+                    </div>
+                </div>
+            </nav>
+            
+            <!-- Main Content -->
+            <main class="col-lg-10 col-md-9 main-content">
+                <!-- Top Navbar -->
+                <header class="top-navbar">
+                    <div class="navbar-left">
+                        <button class="sidebar-toggle d-lg-none" onclick="toggleSidebar()">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                        <h4 class="page-title">Kamustahan</h4>
+                    </div>
+                    
+                    <div class="navbar-right">
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Search...">
+                        </div>
+                        
+                        <div class="date-display">
+                            <i class="far fa-calendar-alt"></i>
+                            <span id="currentDate"></span>
+                        </div>
+                        
+                        <div class="notification-btn position-relative">
+                            <a href="notifications.html" class="text-decoration-none text-dark">
+                                <i class="fas fa-bell"></i>
+                                <span class="badge bg-danger rounded-pill position-absolute top-0 start-100 translate-middle">3</span>
+                            </a>
+                        </div>
+                        
+                        <div class="profile-dropdown dropdown">
+                            <button class="dropdown-toggle" data-bs-toggle="dropdown">
+                                <div class="profile-pic">
+                                    <img src="https://ui-avatars.com/api/?name=Student&background=556B4F&color=fff" alt="Profile">
+                                </div>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item" href="profile.html"><i class="fas fa-user me-2"></i>Profile</a></li>
+                                <li><a class="dropdown-item" href="settings.html"><i class="fas fa-cog me-2"></i>Settings</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item text-danger" href="logout.html"><i class="fas fa-sign-out-alt me-2"></i>Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </header>
+                
+                <!-- Content Area -->
+                <div class="content-area">
+                    <div id="kamustahan-page" class="page-content active">
+                        <div class="row g-3">
+                            <div class="col-lg-4">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5>Conversations</h5>
+                                        <div class="card-actions">
+                                            <input type="text" class="form-control form-control-sm" placeholder="Search...">
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="conversation-list">
+                                            <div class="conversation-item active">
+                                                <div class="avatar">
+                                                    <img src="https://ui-avatars.com/api/?name=Guidance&background=556B4F&color=fff">
+                                                </div>
+                                                <div class="conversation-info">
+                                                    <h6>Guidance Counselor</h6>
+                                                    <small>How are you today?</small>
+                                                    <span class="badge bg-danger rounded-pill">2</span>
+                                                </div>
+                                            </div>
+                                            <div class="conversation-item">
+                                                <div class="avatar">
+                                                    <img src="https://ui-avatars.com/api/?name=Peer&background=AFC6A4&color=fff">
+                                                </div>
+                                                <div class="conversation-info">
+                                                    <h6>Peer Support</h6>
+                                                    <small>You're doing great!</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-8">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5>Guidance Counselor</h5>
+                                        <small class="text-muted">Online</small>
+                                    </div>
+                                    <div class="card-body chat-window">
+                                        <div class="message received">
+                                            <p>Hello! How are you feeling today?</p>
+                                            <small class="text-muted">10:30 AM</small>
+                                        </div>
+                                        <div class="message sent">
+                                            <p>Hi! I'm doing okay, just a bit stressed about exams.</p>
+                                            <small class="text-muted">10:32 AM</small>
+                                        </div>
+                                        <div class="message received">
+                                            <p>I understand. Would you like to schedule a session?</p>
+                                            <small class="text-muted">10:33 AM</small>
+                                        </div>
+                                        <div class="typing-indicator">
+                                            <span></span><span></span><span></span>
+                                            <small>Typing...</small>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Type a message...">
+                                            <button class="btn btn-primary">
+                                                <i class="fas fa-paper-plane"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/navigation.js"></script>
+</body>
+</html>

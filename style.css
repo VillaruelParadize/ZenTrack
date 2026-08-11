@@ -1,0 +1,228 @@
+/* ===== CSS Variables ===== */
+:root {
+    --bg-color: #F8F0DF;
+    --card-color: #FFF8ED;
+    --primary-color: #556B4F;
+    --secondary-color: #AFC6A4;
+    --accent-color: #7DA86F;
+    --shadow: 0 4px 20px rgba(85, 107, 79, 0.08);
+    --radius: 20px;
+    --transition: all 0.3s ease;
+}
+
+/* ===== Reset & Base Styles ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--bg-color);
+    color: #2d2d2d;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* ===== Scrollbar ===== */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--secondary-color);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color);
+}
+
+/* ===== Links ===== */
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+/* ===== Utility Classes ===== */
+.text-primary-custom {
+    color: var(--primary-color) !important;
+}
+
+.bg-primary-custom {
+    background-color: var(--primary-color) !important;
+}
+
+.border-radius {
+    border-radius: var(--radius) !important;
+}
+
+.shadow-soft {
+    box-shadow: var(--shadow) !important;
+}
+
+/* ===== Cards ===== */
+.card {
+    background-color: var(--card-color);
+    border: none;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(85, 107, 79, 0.12);
+}
+
+.card-header {
+    background: transparent;
+    border-bottom: 1px solid rgba(85, 107, 79, 0.1);
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.card-header h5 {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-actions {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+/* ===== Buttons ===== */
+.btn {
+    border-radius: 12px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    padding: 0.5rem 1.25rem;
+    transition: var(--transition);
+    border: none;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #4a5d45;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(85, 107, 79, 0.3);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.btn-secondary:hover {
+    background-color: #9ab590;
+    color: var(--primary-color);
+}
+
+.btn-outline-primary {
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    background: transparent;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-outline-secondary {
+    border: 2px solid var(--secondary-color);
+    color: var(--primary-color);
+    background: transparent;
+}
+
+.btn-outline-secondary:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+/* ===== Form Controls ===== */
+.form-control, .form-select {
+    border: 2px solid rgba(85, 107, 79, 0.15);
+    border-radius: 12px;
+    padding: 0.6rem 1rem;
+    font-family: 'Inter', sans-serif;
+    transition: var(--transition);
+    background-color: var(--card-color);
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(85, 107, 79, 0.1);
+    background-color: var(--card-color);
+}
+
+.form-label {
+    font-weight: 500;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+/* ===== Badges ===== */
+.badge {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    padding: 0.35rem 0.75rem;
+    border-radius: 50px;
+}
+
+/* ===== Progress Bars ===== */
+.progress {
+    border-radius: 50px;
+    background-color: rgba(85, 107, 79, 0.1);
+    height: 8px;
+}
+
+.progress-bar {
+    background-color: var(--primary-color);
+    border-radius: 50px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    .card-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .card-actions {
+        width: 100%;
+        justify-content: flex-start;
+    }
+}
